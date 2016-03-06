@@ -40,6 +40,7 @@ public:
         Accelerometer   = 0,
         MagneticField   = 1,
         Orientation     = 2,
+        SignificantMotion = 3,
         numSensors
     };
 
@@ -52,6 +53,8 @@ public:
     int setInitialState();
 
 private:
+    int mAccRefCount;
+    int mMotionValue;
     int loadAKMLibrary();
     int update_delay();
     void *mLibAKM;
