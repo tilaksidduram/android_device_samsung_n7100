@@ -76,3 +76,6 @@ RECOVERY_FSTAB_VERSION := 2
 # Selinux
 BOARD_SEPOLICY_DIRS += \
     device/samsung/n7100/selinux
+
+#Lockscreen charging info : real time values for current and voltage
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
