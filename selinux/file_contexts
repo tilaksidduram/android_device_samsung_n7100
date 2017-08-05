@@ -29,6 +29,7 @@
 /sys/devices/platform/samsung-pd.2/mdnie/mdnie(/.*)? u:object_r:sysfs_display:s0
 
 # GPS
+/data/system/gps(/.*)?                  u:object_r:gps_data_file:s0
 /dev/ttySAC1                            u:object_r:gps_device:s0
 /system/bin/gps_daemon.sh               u:object_r:gpsd_exec:s0
 /sys/devices/virtual/gpio/gpio128/value u:object_r:sysfs_gps:s0
