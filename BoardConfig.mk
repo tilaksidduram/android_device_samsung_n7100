@@ -62,17 +62,17 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # Cache
 BOARD_CACHEIMAGE_PARTITION_SIZE := 1048576
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
+#BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/n7100/rootdir/fstab.smdk4x12
 TARGET_RECOVERY_DENSITY := mdpi
-TARGET_USERIMAGES_USE_F2FS := true
+#TARGET_USERIMAGES_USE_F2FS := true
 RECOVERY_FSTAB_VERSION := 2
 
 # Compatibility with pre-kitkat Sensor HALs
 # SENSORS_NEED_SETRATE_ON_ENABLE := true
 
 # Selinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/n7100/selinux
+#BOARD_SEPOLICY_DIRS += \
+#    device/samsung/n7100/selinux
