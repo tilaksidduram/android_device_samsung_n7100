@@ -143,16 +143,6 @@ int SensorBase::openInput(const char* inputName) {
     return fd;
 }
 
-int SensorBase::batch(int handle, int flags, int64_t period_ns, int64_t timeout)
-{
-    return 0;
-}
-
-int SensorBase::flush(int handle)
-{
-    return 0;
-}
-
 int SensorBase::sspEnable(const char* sensorname, int sensorvalue, int en)
 {
     FILE* sspfile;
@@ -190,7 +180,7 @@ int SensorBase::sspWrite(int sensorvalue)
         ALOGI("%s: error writing to file", __func__);
 	ret = -1;
     }
-    
+
     close(fd);
     return ret;
 }
