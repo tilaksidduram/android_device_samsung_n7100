@@ -18,6 +18,7 @@
 $(call inherit-product, device/samsung/smdk4412-common/common.mk)
 
 LOCAL_PATH := device/samsung/n7100
+COMMON_PATH := device/samsung/smdk4412-common
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -30,6 +31,10 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.smdk4x12:root/fstab.smdk4x12 \
     $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc
+
+# HIDL
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/manifest.xml:system/vendor/manifest.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
