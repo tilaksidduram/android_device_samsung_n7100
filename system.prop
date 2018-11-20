@@ -9,6 +9,7 @@ rild.libargs=-d /dev/ttyS0
 ro.sf.lcd_density=320
 ro.lcd_min_brightness=20
 ro.ril.telephony.mqanelements=5
+ro.ril.telephony.nstrings=4
 
 # Camera & Media hacks
 #media.stagefright.legacyencoder=true
