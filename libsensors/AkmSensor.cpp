@@ -88,7 +88,7 @@ AkmSensor::AkmSensor()
     mPendingEvents[Accelerometer].version = sizeof(sensors_event_t);
     mPendingEvents[Accelerometer].sensor = ID_A;
     mPendingEvents[Accelerometer].type = SENSOR_TYPE_ACCELEROMETER;
-    mPendingEvents[Accelerometer].acceleration.status = SENSOR_STATUS_UNRELIABLE;
+    mPendingEvents[Accelerometer].acceleration.status = SENSOR_STATUS_ACCURACY_HIGH;
 
     mPendingEvents[MagneticField].version = sizeof(sensors_event_t);
     mPendingEvents[MagneticField].sensor = ID_M;
@@ -334,7 +334,7 @@ int AkmSensor::readEvents(sensors_event_t* data, int count)
             processEvent(event->code, event->value);
             mInputReader.next();
         } else if (type == EV_SYN) {
-            int64_t time = timevalToNano(event->time);
+            int64_t time = getTimestamp();
             for (int j=0 ; count && mPendingMask && j<numSensors ; j++) {
                 if (mPendingMask & (1<<j)) {
                     mPendingMask &= ~(1<<j);

@@ -21,13 +21,11 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <sys/select.h>
-#include <stdio.h>
 #include <cstring>
 
 #include <cutils/log.h>
 
 #include "ProximitySensor.h"
-#include "SensorBase.h"
 
 #define LOGTAG "ProximitySensor"
 
@@ -45,6 +43,7 @@ ProximitySensor::ProximitySensor()
     memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
 
     if (data_fd) {
+        ALOGE("%s: got input_name %s", LOGTAG, input_name);
         strcpy(input_sysfs_path, "/sys/class/input/");
         strcat(input_sysfs_path, input_name);
         strcat(input_sysfs_path, "/device/");
@@ -130,10 +129,7 @@ int ProximitySensor::readEvents(sensors_event_t* data, int count)
         int type = event->type;
         if (type == EV_ABS) {
             if (event->code == EVENT_TYPE_PROXIMITY) {
-                if (event->value != -1) {
-                    // FIXME: not sure why we're getting -1 sometimes
-                    mPendingEvent.distance = indexToValue(event->value);
-                }
+                mPendingEvent.distance = indexToValue(event->value);
             }
         } else if (type == EV_SYN) {
             mPendingEvent.timestamp = timevalToNano(event->time);
