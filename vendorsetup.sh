@@ -1,2 +1,2 @@
-add_lunch_combo lineage_n7100-userdebug
-add_lunch_combo lineage_n7100-eng
+add_lunch_combo havoc_7100-userdebug
+add_lunch_combo havoc_n7100-eng
