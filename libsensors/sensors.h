@@ -82,9 +82,9 @@ const int ssp_sensors[] = {
 #define EVENT_TYPE_ROLL             ABS_RZ  //5
 #define EVENT_TYPE_ORIENT_STATUS    ABS_WHEEL //8
 
-#define EVENT_TYPE_MAGV_X           ABS_RX  // 3
-#define EVENT_TYPE_MAGV_Y           ABS_RY  // 4
-#define EVENT_TYPE_MAGV_Z           ABS_RZ  // 5
+#define EVENT_TYPE_MAGV_X           ABS_THROTTLE  // 6
+#define EVENT_TYPE_MAGV_Y           ABS_RUDDER  // 7
+#define EVENT_TYPE_MAGV_Z           ABS_GAS  // 9
 #define EVENT_TYPE_MAGV_ACC         ABS_WHEEL // 8
 
 #define EVENT_TYPE_TEMPERATURE      ABS_THROTTLE
